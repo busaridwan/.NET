@@ -30,7 +30,25 @@ string - a sequence of characters. assigned using double quotes
 
 //RUNNING C# ON COMPUTER
 Install integrated development environment (IDE)
-Install Visual Studio, choose the default configuration, click File->New->Project and then choose Console Application 
+Install Visual Studio (VS), choose the default configuration, click File->New->Project and then choose Console Application 
+
+//WRITING FIRST PROGRAM
+using System;
+namespace MyLearning
+{
+  class Program{
+    static void Main(string[] args){
+     Console.WriteLine("Hi"); //print Hi to the console
+     int x = 4;
+     double y = 8;
+     Console.WriteLine(x);
+     Console.WriteLine("x : {0}, y : {1}", x, y);
+    }
+  }
+}
+//Every console application in C# should contain Main method
+To run your pragrm in VS, press Ctrl+F5
+Console uses a text-only code.
 
 
 
