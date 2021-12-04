@@ -50,5 +50,75 @@ namespace MyLearning
 To run your pragrm in VS, press Ctrl+F5
 Console uses a text-only code.
 
+//GETTING USER INPUT 
+Console.ReadLine()
+static void Main(string[] args){
+string yourName;
+Console.WriteLine("What is your name?";
+yourName = Console.ReadLine();
+Console.WriteLine("Welcome " + yourName); // or "Hello {0}", yourName //Note that inputs are strings by default
+
+# TYPE CONVERSION
+Convert.ToDouble
+Convert.ToInt32
+Convert.ToBoolean
+
+static void Main(string[] args){
+Console.WriteLine("What is your age?");
+int age = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Your age is {0}", age);
 
 
+# COMMENTS facilitatesclear understanding
+Single line comment //
+Multi-line comment /* */
+
+# VAR KEYWORD
+var is use to declare variable type automatically
+var num = 2; //implicitly typed 
+# Constants
+store value that cannot change from initial assignment
+const double PI = 3.142
+
+Both var and const must be initialized with a value when declared.
+
+# Operators
+- substraction (minus)
++ addition (plus)
+* multiplication (times)
+/ division // returns int value without the remainder, division by 0 is undefined
+% modulus (remainder)
+
+# Operator Precedence
+determines which gets evaluated first BODMAS (), * / %, + - 
+Operators with equal precedence are evaluated from left to right.
+
+# Assignment Operators
+int x = 4;
+x += 2; // x = x + 2
+
+# Increment ++ and Decrement -- Operator
+The increment operator is used to increase an integer's value by one.
+int x = 2;
+x++; // x = x + 1
+
+# Forms of ++ & -- Opeartor
+there are two froms ++x; Prefix and x++; Postfix
+Prefix increments the value, and then proceeds with the expression.
+Postfix evaluates the expression and then performs the incrementing.
+
+# AREA OF A CIRCLE IN C#
+namespace AreaOfCirle
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const double pi = 3.14;
+            double radius;
+            radius = Convert.ToDouble(Console.ReadLine());
+            var area = pi * (radius * radius);
+            Console.WriteLine(area);          
+        }
+    }
+}
