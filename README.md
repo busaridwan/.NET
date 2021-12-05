@@ -423,3 +423,262 @@ void Print(string label, double a){
 }
 //RECURSION
 A recursive method is a method that calls itself. - Factotial
+static void Fact(int a){
+ if (a == 1){
+ return 1; // exit condition
+ }
+ retrun a * Fact(a-1);
+}
+# Making a Puramid in C#
+an algorithm is the step by step logic required for the solution to a problem
+using System;
+namespace MakingPyramid
+{
+  class Program
+  {
+    static void DrawPyramid(int n)
+    {
+      for (int i=1; i<=n; i++)
+      {
+        for (int j=i; j<=n; j++)
+        {
+          Console.Write("  "); // displays the space on each row
+        }
+        for (int k=1; k<=2*i-1; k++)
+        {
+          Console.Write("*"+" "); // displays the required number of stars on each row
+        }
+        Console.WriteLine(); // moves the cursor to the next row
+      }
+    }
+    static void Main(string[] args)
+    {
+      DrawPyramid(5);
+    }
+  }
+}
+
+Level Points
+
+
+Passing the first level of a video game awards the player 1 point. For each subsequent level passed, the points awarded increment by 1 (2 for the 2nd level, 3 for the 3rd, and so on).
+The program you are given takes the number of passed levels as input. Complete the given function to take that number as an argument, and recursively calculate and return the total number of points given for all passed levels.
+namespace LevelPoints
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int levels = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine(Points(levels));
+        }
+
+        
+        static int Points(int levels)
+        {
+            //your code goes here
+            if (levels == 1){
+                return 1;}
+            return levels + Points(levels - 1);
+            
+             
+        }
+
+    }
+
+}
+
+# CLASSES AND OBJECTS IN C#
+class is a data type that defines a set of variables and methods for a declared object. class contains properties and methods. Objects are instance of a class.
+// To use custom data types, you need to define a class. class is the blueprint of creating different objects. The process of creating objects is called instantiation
+The characteristics of an object are called properties. This describes the current state of an object.
+
+// C# has two ways of storing data: by reference and by value.
+The built-in data types, such as int and double, are used to declare variables that are value types. Their value is stored in memory in a location called the stack.
+
+// Reference types are used for storing objects. For example, when you create an object of a class, it is stored as a reference type.
+Reference types are stored in a part of the memory called the heap.
+When you instantiate an object, the data for that object is stored on the heap, while its heap memory address is stored on the stack.
+That is why it is called a reference type - it contains a reference (the memory address) to the actual object on the heap.
+
+Stack is used for static memory allocation, which includes all your value types, like x.
+Heap is used for dynamic memory allocation, which includes custom objects, that might need additional memory during the runtime of your program.
+
+class Person
+{
+  int age;
+  string name;
+  public void SayHi()
+  {
+    Console.WriteLine("Hi");
+  }
+}
+static void Main(string[] args){
+  Person p1 = new Person();
+  p1.SayHi();
+  p1.age = 45;
+  p1.name = "Ridwan";
+  Console.WriteLine(p1.age);
+  }
+ Access modifiers are keywords used to specify the accessibility of a member. public can be accessed from outside the class, as long as it's anywhere within the scope of the class object. You can also designate class members as private or protected
+ 
+Encapsulation is also called information hiding. encapsulation is the idea of keeping together and protecting entity.  It simply combining members together within a class and restricting access to the inner workings of that class. Encapsulation is implemented by using access modifiers. An access modifier defines the scope and visibility of a class member. It allows you to hide detaails of a class realization.
+
+C# supports the following access modifiers: public, private, protected, internal, protected internal. the public access modifier makes the member accessible from the outside of the class.
+The private access modifier makes members accessible only from within the class and hides them from the outside.
+In summary, the benefits of encapsulation are:
+- Control the way data is accessed or modified.
+- Code is more flexible and easy to change with new requirements.
+- Change one part of code without affecting other parts of code.
+class BankAccount {
+        private double balance=0;
+        public void Deposit(double n) {
+            balance += n;
+        }
+        public void Withdraw(double n) {
+            balance -= n;
+        }
+        public double GetBalance() {
+            return balance;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            BankAccount b = new BankAccount();
+            b.Deposit(199);
+            b.Withdraw(42);
+            Console.WriteLine(b.GetBalance());
+        }
+    }
+// CONSTRUCTORS
+A class constructor is a special member method of a class that is executed whenever a new object of that class is created.
+A constructor has exactly the same name as its class, is public, and does not have any return type.
+class Person
+{
+  private int age;
+  public Person()
+  {
+    Console.WriteLine("Hi there");
+  }
+}
+static void Main(string[] args){
+  Person p = new Person();
+}
+ This can be useful in a number of situations. For example, when creating an object of type BankAccount, you could send an email notification to the owner.
+The same functionality could be achieved using a separate public method. The advantage of the constructor is that it is called automatically.
+Constructors can be very useful for setting initial values for certain member variables.
+A default constructor has no parameters. However, when needed, parameters can be added to a constructor. This makes it possible to assign an initial value to an object when it's created
+Constructors can be overloaded like any method by using different numbers of parameters.
+ class Program
+    {
+        class Person
+        {
+            private int age;
+            private string name;
+            public Person(string nm)
+            {
+                name = nm;
+            }
+            public string getName()
+            {
+                return name;
+            }
+        }
+        static void Main(string[] args)
+        {
+            Person p = new Person("David");
+            Console.WriteLine(p.getName());
+        }
+    }
+A property is a member that provides a flexible mechanism to read, write, or compute the value of a private field. Properties can be used as if they are public data members, but they actually include special methods called accessors.
+The accessor of a property contains the executable statements that help in getting (reading or computing) or setting (writing) a corresponding field. Accessor declarations can include a get accessor, a set accessor, or both.
+class Person
+{
+  private string name; //field
+
+  public string Name //property
+  {
+    get { return name; }
+    set { name = value; }
+  }
+}
+The Person class has a Name property that has both the set and the get accessors.
+The set accessor is used to assign a value to the name variable; get is used to return its value.
+value is a special keyword, which represents the value we assign to a property using the set accessor.
+The name of the property can be anything you want, but coding conventions dictate properties have the same name as the private field with a capital letter.
+Once the property is defined, we can use it to assign and read the private member:
+The property is accessed by its name, just like any other public member of the class.
+class Program
+    {
+        class Person
+        {
+            private string name;
+            public string Name
+            {
+                get { return name; }
+                set { name = value; }
+            }
+        }
+        static void Main(string[] args)
+        {
+            Person p = new Person();
+            p.Name = "Bob";
+            Console.WriteLine(p.Name);
+        }
+    }
+Any accessor of a property can be omitted.
+For example, the following code creates a property that is read-only:
+// skipping the set accessor creates a read-only property
+class Person
+{
+  private string name;
+  public string Name
+  {
+    get { return name; }
+  }
+}
+A property can also be private, so it can be called only from within the class.
+So, why use properties? Why not just declare the member variable public and access it directly?
+With properties you have the option to control the logic of accessing the variable.
+For example, you can check if the value of age is greater than 0, before assigning it to the variable:
+class Person
+{
+  private int age=0;
+  public int Age
+  {
+    get { return age; }
+    set {
+      if (value > 0)
+        age = value;
+    }
+  }
+}
+You can have any custom logic with get and set accessors.
+// Auto-Implemented Properties
+When you do not need any custom logic, C# provides a fast and effective mechanism for declaring private members through their properties.
+For example, to create a private member that can only be accessed through the Name property's get and set accessors, use the following syntax:
+public string Name { get; set; }
+As you can see, you do not need to declare the private field name separately - it is created by the property automatically. Name is called an auto-implemented property. Also called auto-properties, they allow for easy and short declaration of private members.
+We can rewrite the code from our previous example using an auto-property:
+ class Program
+    {
+        class Person
+        {
+            public string Name { get; set; }
+        }
+        static void Main(string[] args)
+        {
+            Person p = new Person();
+            p.Name = "Bob";
+            Console.WriteLine(p.Name);
+        }
+    }
+
+
+
+
+
+
