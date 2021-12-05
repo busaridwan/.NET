@@ -408,3 +408,18 @@ static void Main(string[] args){
 // gives x and y the value of 34, 45
 }
 
+// METHOD OVERLOADING
+Method overloading is when multiple methods have the same name, but different parameters.
+void Print(int a){
+  Console.WriteLine("Value: "+a);
+}
+void Print(double a){
+  Console.WriteLine("Value: "+a);
+}
+// a now works for both int and double - same method different parameters
+
+void Print(string label, double a){
+  Console.WriteLine(label +a);
+}
+//RECURSION
+A recursive method is a method that calls itself. - Factotial
