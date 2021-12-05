@@ -4,23 +4,23 @@ C# is an object-oriebted programming language for building enterprise apps that 
 Applications written in C# uses the .NET Framework and its compenents which consist of Common Language Runtime (CLR) and the .NET Framework class library.
 CLR manages code at execution time, providing core services such as memory management, code accuracy, and many other aspects of your code. while the class library is a collection of classes, interfaces, and value types that enable you to accomplish a range of common programming tasks, such as data collection, file access, and working with text.
 
-//VARIABLES IN C#
+# VARIABLES IN C#
 Variables are use for storing values/information which reserves memory location.
 Variablea are declared by specifying the name and data type
 name are identfiers and can contain letters,numbers and _
 name must start with letter or _ and should be descriptive
 
-/VARIABLE TYPES
+# VARIABLE TYPES
 A data type defines the information that can be stored in a variable, the size of needed memory and the operations that can be performed with the variable.
 A line of code that completes an action is called a statement. Each statement in C# must end with a semicolon.
 
-/DECLARING A VARIABLE
+# DECLARING A VARIABLE
 int aNumber = 23;
 or
 in aNumber;
 aNumber = 23;
 
-/C# Built-in Data Types
+# C# Built-in Data Types
 int - integer.
 float - floating point number.
 double - double-precision version of float.
@@ -28,11 +28,11 @@ char - a single character. values assigned using single quotes.
 bool - Boolean that can have only one of two values: True or False.
 string - a sequence of characters. assigned using double quotes
 
-//RUNNING C# ON COMPUTER
+# RUNNING C# ON COMPUTER
 Install integrated development environment (IDE)
 Install Visual Studio (VS), choose the default configuration, click File->New->Project and then choose Console Application 
 
-//WRITING FIRST PROGRAM
+# WRITING FIRST PROGRAM
 using System;
 namespace MyLearning
 {
@@ -50,7 +50,7 @@ namespace MyLearning
 To run your pragrm in VS, press Ctrl+F5
 Console uses a text-only code.
 
-//GETTING USER INPUT 
+# GETTING USER INPUT 
 Console.ReadLine()
 static void Main(string[] args){
 string yourName;
@@ -122,3 +122,82 @@ namespace AreaOfCirle
         }
     }
 }
+
+# CONDITIONS IN C#
+// IF statement
+static void Main(string[] args){
+int x = 2;
+int y = 4;
+if (y>x){
+Console.WriteLine("y is greater x");
+}
+}
+
+// Relational Opeartors
+<,>,>=,<=,==,!=
+
+// Else clause
+if (condition){
+ //statements
+}
+else{
+//statements
+}
+// Example of else
+int mark = 85;
+if (mark < 59){
+Console.WriteLine("failed");
+}
+else {
+Console.WriteLine("Passed");
+}
+
+# NESTED IF IN C#
+int age = Convert.ToInt32(Console.ReadLine());
+if (age > 14)
+{
+  if(age >= 18){
+    Console.WriteLine("You're an adult");
+    }
+  else{Console.WriteLine("Still a teenager");
+    }
+}
+else{
+  if(age > 0){Console.WriteLine("You're a child");}
+else{Console.WriteLine("Something is wrong");}
+}
+
+// ESLE IF
+# SWITCH STATEMENT IN C#
+static void Main(string[] args)
+        {
+            int age = 88;
+            switch (age) {
+                case 16:
+                    Console.WriteLine("Too young");
+                    break;
+                case 42:
+                    Console.WriteLine("Adult");
+                    break;
+                case 70:
+                    Console.WriteLine("Senior");
+                    break;
+                default:
+                    Console.WriteLine("The default case");
+                    break;
+            }
+        }
+        
+ # While, For and Do WHile Loop
+ // WHILE LOOP
+ int x = 1;
+ while(int x < 6){
+ Console.WriteLine(x);
+ x++; // x+=2
+ }
+ // SHORT FORM
+ int num = 0;
+ while (++num < 6){
+ Console.WriteLine(num);}
+ 
+ 
