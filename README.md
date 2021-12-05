@@ -365,3 +365,46 @@ static void Main(string[] args){
   int res = Area(w:5, h:4);
   Console.WriteLine(res);
 }
+
+//PASSING ARGUMENTS
+There are three ways to pass arguments to a method when the method is called: By value, By reference, and as Output.
+// BY VALUE
+static void Sqr(int x){
+  x=x*x;
+}
+static void Main(string[] args){
+  int a = 3;
+  Sqr(a);
+  Console.WriteLine(a); // Outputs 3
+}
+
+// REFERENCE
+static void Sqr(ref int y){
+  y = y*y;
+}
+
+static void Main(string[] args){
+  int d = 2;
+  Sqr(ref d);
+  Console.WriteLine(d); // 4
+}
+// SWAP
+void Swap(ref int x, ref int y){
+  int temp;
+  temp = x;
+  x = y;
+  y = temp;
+}
+// Passing by OUPUT
+
+Output parameters are similar to reference parameters, except that they transfer data out of the method rather than accept data in. They are defined using the out keyword.
+static void GetValues(out int a, out int b){
+  a = 34;
+  b = 45;
+}
+static void Main(string[] args){
+  int x, y;
+  GetValues(out x, out y);
+// gives x and y the value of 34, 45
+}
+
