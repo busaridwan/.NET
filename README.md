@@ -189,7 +189,7 @@ static void Main(string[] args)
         }
         
  # While, For and Do WHile Loop
- // WHILE LOOP
+ // WHILE LOOP - executes as long the condition is true
  int x = 1;
  while(int x < 6){
  Console.WriteLine(x);
@@ -200,4 +200,168 @@ static void Main(string[] args)
  while (++num < 6){
  Console.WriteLine(num);}
  
+ // FOR LOOP - executes statement a specific number of times.
+ for (int x = 0; x < 10; x++){ //x+=3
+  Console.WriteLine(x);
+ }
  
+ //OR
+ for (int x = 10; x > 0; x-=2){
+  Console.WriteLine(x);
+ }
+ 
+ // 
+ int x = 10;
+ for(;x>0;x--){}
+ //
+ int x = 0;
+ for (;x<10;){
+   //statement;
+   x++;
+ }
+//CREATING AN INFINITE FOR LOOP - for(;;){}
+
+// DO-WHILE LOOP - will run atleast once even when the condition is false // While only execute the staement after testing the condition
+int r = 0;
+do {
+  Console.WriteLine(r);
+  r++;
+}
+while(r<7);
+
+// BREAK
+int a = 0;
+while (++a < 20){
+  if(a == 5){
+  break;
+  }
+  Console.WriteLine(a);
+}
+// continue - skips
+for(int x = 1; x < 10; x++){
+  if(x==5)
+  continue;
+  Console.WriteLine(x);
+}
+
+//USING FRO LOOP to print even numbers
+for(int x = 1; x <= 10; x++){
+ if(x%2 != 0)
+ continue;
+ Console.WriteLine(x);
+}
+
+//LOGICAL OPERATORS
+AND = && - all operands must be true
+OR = || - any of the operands has to be true
+NOT = ! - true when operand is false / works with a single operand
+
+# Condition Operator ?
+Console.WriteLine("How old are your?");
+int age = Convert.ToInt32(Console.ReadLine());
+string msg;
+msg = (age >= 18) ? "Welcome" : "Sorry, you are too young to be here";
+Console.WriteLine(msg);
+
+# BASIC CALCULATOR
+ do {
+  Console.Write("x = ");
+  string str = Console.ReadLine();
+  if (str == "exit")
+    break;
+
+  int x = Convert.ToInt32(str);
+
+  Console.Write("y = ");
+  int y = Convert.ToInt32(Console.ReadLine());
+
+  int sum = x + y;
+  Console.WriteLine("Result: {0}", sum);
+}
+while (true);
+
+# SUM FROM 1 TO 100
+int sum = 0;
+for (int x = 1; x<=100; x++){
+  sum += x;
+}
+Console.WriteLine(x);
+
+# Multiple of 3
+int number = Convert.ToInt32(Console.ReadLine());
+            int n = 1;
+            while(n <= number)
+            {
+                if(n%3==0)
+                {
+                    Console.WriteLine("*");
+                }
+                else
+                {
+                    Console.WriteLine(n);
+                }
+                n++;
+                }
+                
+ # METHOD IN C#
+ A method is a group of statements that perform a particular task
+ Main is a built-in method every C# must have
+ Console.WriteLine("Enter a number to square");
+ int x = Convert.ToInt32(Console.ReadLine());
+ int Square(int x){
+  int result = x * x;
+  return result;
+ }
+ // void is a basic data type that defines a valueless state i.e. If you do not want your method to return a value
+ static void sayHi()
+        {
+            Console.WriteLine("Hello");
+        }
+        static void Main(string[] args)
+        {
+            sayHi();
+        }
+The static keyword is used to make methods accessible in Main.
+ // PARAMETERS
+ Method declarations can define a list of parameters to work with.
+Parameters are variables that accept the values passed into the method when called.
+void Print(int x){
+  Console.WriteLine(x);
+}
+in the above example x is the parameter
+argument is the value assigned to the formal parameter x when calling the method in Main
+  static void Func(int x)
+        {
+            Console.WriteLine(x*2);
+        }
+        static void Main(string[] args)
+        {
+            Func(5);
+  
+            Func(12);When calling the method, you can use the parameter names to provide the arguments in any order you like
+
+            Func(42);
+        }
+// Optional Arguments
+static int Pow(int x, int y=2)
+{
+  int result = 1;
+  for (int i = 0; i < y; i++)
+  {
+    result *= x;
+  }
+ 
+  return result;
+}
+//Named Arguments
+Named arguments free you from the need to remember the order of the parameters in a method call. Each argument can be specified by the matching parameter name.
+When calling the method, you can use the parameter names to provide the arguments in any order like.
+
+static in Area(int h, int w){
+  result = h * w;
+  return result;
+}
+static void Main(string[] args){
+  int res = Area(w:5, h:4);
+  Console.WriteLine(res);
+}
